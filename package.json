@@ -1,0 +1,24 @@
+{
+  "name": "f1-drivers-sso",
+  "version": "1.0.0",
+  "description": "Simple full-stack web application to demonstrate Single Sign On (Part 2)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DArachchi/f1-drivers-sso.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DArachchi/f1-drivers-sso/issues"
+  },
+  "homepage": "https://github.com/DArachchi/f1-drivers-sso#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11"
+  }
+}
