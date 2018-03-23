@@ -30,9 +30,10 @@ router.get('/login', passport.authenticate('auth0', {
     res.render('login', { env: env});
 });
 
-router.get('/logout', function(req,res) {
-    req.logout();
-    res.redirect('/');
+router.get('/logout', function (req, res){
+    var redirectUrl = 'https://f1-sso.auth0.com/v2/logout?returnTo=http%3A%2F%2Fwww.google.com&client_id=' + env.AUTH0_CLIENT_ID;
+    
+    res.redirect(redirectUrl);
 });
 
 router.get('/drivers', ensureLoggedIn, function(req,res) {
