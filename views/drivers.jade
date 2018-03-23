@@ -1,0 +1,13 @@
+extends layout
+
+block content  
+  div.clearfix
+    div.pull-left
+      span F1 Drivers
+    div.pull-right
+      a(href="/logout") Logout
+  br
+  div.jumbotron
+    h1.text-center 2018 F1 Driver Names
+  each driver, index in drivers
+    p #{driver.name} - #{driver.country}
