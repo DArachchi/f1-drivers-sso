@@ -8,7 +8,8 @@ var request = require('request');
 var env = {
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
-    AUTH0_CALLBACK_URL: process.env.AUTH0_CALLBACK_URL
+    AUTH0_CALLBACK_URL: process.env.AUTH0_CALLBACK_URL,
+    REDIRECT_URI: process.env.REDIRECT_URI
 };
   
 
@@ -31,7 +32,7 @@ router.get('/login', passport.authenticate('auth0', {
 });
 
 router.get('/logout', function (req, res){
-    var redirectUrl = 'https://f1-sso.auth0.com/v2/logout?returnTo=http%3A%2F%2Fwww.google.com&client_id=' + env.AUTH0_CLIENT_ID;
+    var redirectUrl = 'https://f1-sso.auth0.com/v2/logout?returnTo=' + env.REDIRECT_URI + '&client_id=' + env.AUTH0_CLIENT_ID;
     
     res.redirect(redirectUrl);
 });
